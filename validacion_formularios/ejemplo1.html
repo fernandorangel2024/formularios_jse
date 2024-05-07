@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validación de Formulario</title>
+<script>
+    function validarFormulario() {
+        var nombre = document.forms["miFormulario"]["nombre"].value;
+        var email = document.forms["miFormulario"]["email"].value;
+        var edad = document.forms["miFormulario"]["edad"].value;
+
+        // Validar campo obligatorio (nombre)
+        if (nombre == "") {
+            alert("Por favor, ingresa tu nombre.");
+            return false;
+        }
+
+        // Validar campo obligatorio (email)
+        if (email == "") {
+            alert("Por favor, ingresa tu correo electrónico.");
+            return false;
+        } else {
+            // Validar formato de correo electrónico
+            var regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regexCorreo.test(email)) {
+                alert("Por favor, ingresa un correo electrónico válido.");
+                return false;
+            }
+        }
+
+        // Validar campo obligatorio (edad)
+        if (edad == "") {
+            alert("Por favor, ingresa tu edad.");
+            return false;
+        } else {
+            // Validar que la edad sea un número entero positivo
+            if (isNaN(edad) || parseInt(edad) <= 0 || parseInt(edad) != parseFloat(edad)) {
+                alert("Por favor, ingresa una edad válida (número entero positivo).");
+                return false;
+            }
+        }
+
+        // Si la validación pasa, el formulario se envía
+        return true;
+    }
+</script>
+</head>
+<body>
+
+<h2>Formulario de Registro</h2>
+
+<form name="miFormulario" onsubmit="return validarFormulario()" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="email">Correo Electrónico:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="edad">Edad:</label>
+    <input type="text" id="edad" name="edad" required><br><br>
+
+    <input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>

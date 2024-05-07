@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validación de Lista Desplegable</title>
+<script>
+function validarSeleccion() {
+    var lista = document.getElementById("miLista");
+    var opcionSeleccionada = lista.options[lista.selectedIndex].value;
+    
+    // Validar que se ha seleccionado una opción
+    if (opcionSeleccionada == "") {
+        alert("Por favor, seleccione una opción de la lista.");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+
+<h2>Formulario con Lista Desplegable</h2>
+
+<form onsubmit="return validarSeleccion()">
+    <label for="miLista">Selecciona una opción:</label>
+    <select id="miLista" name="miLista">
+        <option value="">Selecciona una opción</option>
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+        <option value="opcion3">Opción 3</option>
+    </select>
+    <input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>

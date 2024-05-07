@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validación de Campo Numérico</title>
+<script>
+function validarCampoNumerico() {
+    var campo = document.getElementById("campoNumerico").value;
+    
+    // Expresión regular para validar solo números
+    var numeroRegex = /^[0-9]+$/;
+    
+    // Validar si el campo está vacío o no contiene solo números
+    if (campo.trim() == "" || !numeroRegex.test(campo)) {
+        alert("Por favor, ingrese solo valores numéricos.");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+
+<h2>Formulario con Campo Numérico</h2>
+
+<form onsubmit="return validarCampoNumerico()">
+    <label for="campoNumerico">Campo Numérico:</label>
+    <input type="text" id="campoNumerico" name="campoNumerico">
+    <input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validación de Campo de Texto</title>
+<script>
+function validarCampo() {
+    var campo = document.getElementById("campoTexto").value;
+    
+    // Validar que el campo no esté vacío
+    if (campo.trim() == "") {
+        alert("Por favor, ingrese un valor en el campo.");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+
+<h2>Formulario con Campo de Texto Obligatorio</h2>
+
+<form onsubmit="return validarCampo()">
+    <label for="campoTexto">Campo de Texto:</label>
+    <input type="text" id="campoTexto" name="campoTexto">
+    <input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>

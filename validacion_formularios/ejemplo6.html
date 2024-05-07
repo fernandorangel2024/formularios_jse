@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validación de Número de DNI</title>
+<script>
+function validarDNI() {
+    var dni = document.getElementById("dni").value;
+    
+    // Expresión regular para validar DNI en España (formato numérico de 8 dígitos)
+    var dniRegex = /^[0-9]{8}$/;
+    
+    // Validar si el DNI es válido o no
+    if (!dniRegex.test(dni)) {
+        alert("El número de DNI ingresado no es válido.");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+
+<h2>Formulario con Validación de Número de DNI</h2>
+
+<form onsubmit="return validarDNI()">
+    <label for="dni">Número de DNI:</label>
+    <input type="text" id="dni" name="dni">
+    <input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>

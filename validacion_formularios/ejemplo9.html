@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validación de Checkbox</title>
+<script>
+function validarCheckbox() {
+    var checkbox = document.getElementById("miCheckbox");
+    
+    // Validar si el checkbox ha sido seleccionado
+    if (!checkbox.checked) {
+        alert("Por favor, seleccione el checkbox.");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+
+<h2>Formulario con Checkbox</h2>
+
+<form onsubmit="return validarCheckbox()">
+    <input type="checkbox" id="miCheckbox" name="miCheckbox">
+    <label for="miCheckbox">Selecciona esta opción</label>
+    <br><br>
+    <input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>

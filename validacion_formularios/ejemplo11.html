@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validación de Número Telefónico</title>
+<script>
+function validarTelefono() {
+    var telefono = document.getElementById("telefono").value;
+    
+    // Expresión regular para validar un número telefónico
+    var telefonoRegex = /^\d{10}$/;
+    
+    // Validar si el número telefónico coincide con el formato esperado
+    if (!telefonoRegex.test(telefono)) {
+        alert("Por favor, ingrese un número telefónico válido (10 dígitos).");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+
+<h2>Formulario con Número Telefónico</h2>
+
+<form onsubmit="return validarTelefono()">
+    <label for="telefono">Número Telefónico:</label>
+    <input type="text" id="telefono" name="telefono" placeholder="Ejemplo: 1234567890">
+    <input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validación de Fecha</title>
+<script>
+function validarFecha() {
+    var fechaString = document.getElementById("fecha").value;
+    
+    // Intentar crear una instancia de fecha a partir de la cadena ingresada
+    var fecha = new Date(fechaString);
+    
+    // Verificar si la instancia de fecha es válida
+    if (isNaN(fecha.getTime())) {
+        alert("Por favor, ingrese una fecha válida.");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+
+<h2>Formulario con Campo de Fecha</h2>
+
+<form onsubmit="return validarFecha()">
+    <label for="fecha">Fecha:</label>
+    <input type="text" id="fecha" name="fecha" placeholder="YYYY-MM-DD">
+    <input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>
